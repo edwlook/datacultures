@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/canvas/embedded/*url' => 'canvas_lti#embedded', :defaults => { :format => 'html' }
   get '/canvas/lti_engagement_index' => 'canvas_lti#lti_engagement_index', :defaults => { :format => 'xml' }
   get '/users/:course_id' => 'canvas_lti#students_list', :defaults => { :format => 'json'}
+  get '/submissions/:course_id' => 'submissions#get_submissions', :defaults => { :format => 'json'}
 
   namespace :api do
     namespace :v1 do
